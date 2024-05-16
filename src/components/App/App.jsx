@@ -4,6 +4,7 @@ import { initialContacts } from '../../data/initialContacts';
 import ContactForm from '../ContactForm/ContactForm';
 import SearchBox from '../SearchBox/SearchBox';
 import ContactList from '../ContactList/ContactList';
+import css from './App.module.css';
 
 const getContacts = () => {
   const savedContacts = localStorage.getItem('contacts');
@@ -38,13 +39,18 @@ export default function App() {
   }, [contacts]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className={css.container}>
+      <h1 className={css.title}>Phonebook</h1>
       <ContactForm onAdd={handleAddContact} />
 
-      <h2>Contacts</h2>
-      <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList initialContacts={visibleContacts} onDelete={deleteContact} />
+      <h2 className={css.subtitle}>Contacts</h2>
+      <div className={css.wrapper}>
+        <SearchBox value={filter} onFilter={setFilter} />
+        <ContactList
+          initialContacts={visibleContacts}
+          onDelete={deleteContact}
+        />
+      </div>
     </div>
   );
 }

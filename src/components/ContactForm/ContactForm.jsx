@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useId } from 'react';
+import css from './ContactForm.module.css';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -28,30 +29,38 @@ export default function ContactForm({ onAdd }) {
       validationSchema={ContactSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <div>
-          <label htmlFor={`${fieldId}-name`}>Name</label>
-          <Field
-            type="text"
-            name="name"
-            id={`${fieldId}-name`}
-            placeholder="Name"
-          />
-          <ErrorMessage name="name" component="span" />
-        </div>
+      <Form className={css.form}>
+        {/* <div className={css.box}> */}
+        <label className={css.label} htmlFor={`${fieldId}-name`}>
+          Name
+        </label>
+        <Field
+          className={css.input}
+          type="text"
+          name="name"
+          id={`${fieldId}-name`}
+          placeholder="Name"
+        />
+        <ErrorMessage className={css.error} name="name" component="span" />
+        {/* </div> */}
 
-        <div>
-          <label htmlFor={`${fieldId}-number`}>Number</label>
-          <Field
-            type="tel"
-            name="number"
-            id={`${fieldId}-number`}
-            placeholder="Phone number"
-          />
-          <ErrorMessage name="number" component="span" />
-        </div>
+        {/* <div className={css.box}> */}
+        <label className={css.label} htmlFor={`${fieldId}-number`}>
+          Number
+        </label>
+        <Field
+          className={css.input}
+          type="tel"
+          name="number"
+          id={`${fieldId}-number`}
+          placeholder="Phone number"
+        />
+        <ErrorMessage className={css.error} name="number" component="span" />
+        {/* </div> */}
 
-        <button type="submit">Add contact</button>
+        <button className={css.btn} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );
