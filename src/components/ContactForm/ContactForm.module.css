@@ -1,11 +1,10 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  width: 350px;
+  width: 400px;
 
   padding: 20px;
   position: relative;
@@ -34,6 +33,14 @@
   left: 0;
   height: 2px;
   width: 100%;
+}
+
+.thumb {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  position: relative;
 }
 
 .input {
@@ -101,12 +108,14 @@
 }
 
 .label {
-  /* margin-bottom: 8px; */
   font-size: 22px;
   color: var(--white);
   text-shadow: -1px -2px var(--brightRed), 0 1px 0 var(--paleRed);
 }
 
 .error {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
   color: var(--yellow);
 }

@@ -30,33 +30,33 @@ export default function ContactForm({ onAdd }) {
       onSubmit={handleSubmit}
     >
       <Form className={css.form}>
-        {/* <div className={css.box}> */}
-        <label className={css.label} htmlFor={`${fieldId}-name`}>
-          Name
-        </label>
-        <Field
-          className={css.input}
-          type="text"
-          name="name"
-          id={`${fieldId}-name`}
-          placeholder="Name"
-        />
-        <ErrorMessage className={css.error} name="name" component="span" />
-        {/* </div> */}
+        <div className={css.thumb}>
+          <label className={css.label} htmlFor={`${fieldId}-name`}>
+            Name
+          </label>
+          <Field
+            className={css.input}
+            type="text"
+            name="name"
+            id={`${fieldId}-name`}
+            placeholder="Name"
+          />
+          <ErrorMessage className={css.error} name="name" component="span" />
+        </div>
 
-        {/* <div className={css.box}> */}
-        <label className={css.label} htmlFor={`${fieldId}-number`}>
-          Number
-        </label>
-        <Field
-          className={css.input}
-          type="tel"
-          name="number"
-          id={`${fieldId}-number`}
-          placeholder="Phone number"
-        />
-        <ErrorMessage className={css.error} name="number" component="span" />
-        {/* </div> */}
+        <div className={css.thumb}>
+          <label className={css.label} htmlFor={`${fieldId}-number`}>
+            Number
+          </label>
+          <Field
+            className={css.input}
+            type="tel"
+            name="number"
+            id={`${fieldId}-number`}
+            placeholder="Phone number"
+          />
+          <ErrorMessage className={css.error} name="number" component="span" />
+        </div>
 
         <button className={css.btn} type="submit">
           Add contact

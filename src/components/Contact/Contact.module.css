@@ -18,7 +18,6 @@
   align-items: center;
   padding: 2px 8px;
   width: 40px;
-  /* height: 35px; */
   text-align: center;
   font-family: inherit;
   font-weight: 500;
@@ -35,7 +34,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--yellow)', endColorstr='var(--darkYellow)', GradientType=0 );
   border: 0;
   border-radius: 30px;
-  /* border-radius: 50%; */
 
   text-shadow: -1px -1px var(--darkOrange), 0 1px 0 var(--lightOrange);
   transition: transform var(--cubicBezier);
